@@ -240,7 +240,8 @@ workflows:
   version: 2
   build_test_and_deploy:
     jobs:
-      - screenshot_api_16
+      - screenshot_api_16:
+          context: template-app
 #      - build
 #      - test_api_v16:
 #          requires:
