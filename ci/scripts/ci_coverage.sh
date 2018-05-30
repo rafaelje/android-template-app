@@ -30,10 +30,10 @@
 ./gradlew createDebugCoverageReport
 
 # move code coverage
-mv -v app/build/reports/coverage reports$1
+mv -v app/build/reports/coverage reports
 
 #move Android test
-mv -v app/build/reports/androidTests reports$1
+mv -v app/build/reports/androidTests reports
 
 # replace .resources with resource because github don't support folders with "_" or "." at the beginning
 # mv reports$1/debug/.resources reports$1/debug/resources
@@ -43,7 +43,7 @@ mv -v app/build/reports/androidTests reports$1
 # echo $newindex > reports$1/debug/index.html
 
 # add code coverage and test result
-git add reports$1 -f
+git add reports -f
 
 # temporal commit
 git commit -m "tmp reports"
@@ -61,7 +61,7 @@ git checkout gh-pages
 sudo git clean -fdx
 
 # get documentation folder
-git checkout $CIRCLE_BRANCH reports$1
+git checkout $CIRCLE_BRANCH reports
 
 # create commit
 git commit -m "docs(coverage): update code coverage and test result"
