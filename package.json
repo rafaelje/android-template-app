@@ -1,0 +1,29 @@
+{
+  "name": "@teclib/android-template-app",
+  "version": "1.0.0",
+  "description": "Application template",
+  "main": "index.js",
+  "scripts": {
+    "release": "standard-version -t ''"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TECLIB/android-template-app.git"
+  },
+  "keywords": [
+    "Android",
+    "teclib"
+  ],
+  "author": "Rafael Hernandez <rhernandez@teclib.com> (https://flyve-mdm.com)",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TECLIB/android-template-app/issues"
+  },
+  "homepage": "https://github.com/TECLIB/android-template-app#readme",
+  "devDependencies": {
+    "standard-version": "^4.0.0"
+  },
+  "dependencies": {
+    "conventional-github-releaser": "^2.0.0"
+  }
+}
