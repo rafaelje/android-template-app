@@ -38,8 +38,9 @@ if [[ $CIRCLE_BRANCH == *"master"* ]]; then
 
     # update version name generate on package json
     ./gradlew updateVersionName -P vName=$GIT_TAG
+
+    git add app/src/main/AndroidManifest.xml
+    git commit -m "ci(release): update version on android manifest"
+    git push origin $CIRCLE_BRANCH
 fi
 
-git add app/src/main/AndroidManifest.xml
-git commit -m "ci(release): update version on android manifest"
-git push origin $CIRCLE_BRANCH
