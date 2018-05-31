@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import app.template.common.EnvInfoAbout;
-import app.template.s42.templateandroid.R;
 
 public class AboutActivity extends AppCompatActivity {
 

@@ -9,7 +9,6 @@ import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
 import app.template.common.UtilsCrash;
-import app.template.s42.templateandroid.BuildConfig;
 
 /**
  * All the application configuration
