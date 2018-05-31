@@ -188,7 +188,7 @@ jobs:
             command: ./gradlew assembleRelease
         - run:
             name: Deploy to Google Play
-            command: source ci/scripts/ci_fastlane.sh "playstore"
+            command: source ci/scripts/ci_fastlane.sh "cert"
         - run:
             name: Create a github release
             command: source ci/scripts/ci_github_release.sh
