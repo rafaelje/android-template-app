@@ -1,4 +1,4 @@
-package app.template.s42.templateandroid;
+package app.template;
 
 import org.junit.Test;
 

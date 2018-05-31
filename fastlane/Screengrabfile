@@ -3,10 +3,8 @@
 app_package_name 'app.template'
 use_tests_in_packages ['app.template']
 
-app_apk_path '/home/circleci/flyve_mdm/app/build/outputs/apk/debug/app-debug.apk'
-tests_apk_path '/home/circleci/flyve_mdm/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'
-
-locales ['en-US']
+app_apk_path 'app/build/outputs/apk/debug/app-debug.apk'
+tests_apk_path 'app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'
 
 # clear all previously generated screenshots in your local output directory before creating new ones
 clear_previous_screenshots true
