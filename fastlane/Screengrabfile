@@ -1,7 +1,7 @@
 # remove the leading '#' to uncomment lines
 
-app_package_name 'org.flyve.mdm.agent'
-use_tests_in_packages ['org.flyve.mdm.agent']
+app_package_name 'app.template'
+use_tests_in_packages ['app.template']
 
 app_apk_path '/home/circleci/flyve_mdm/app/build/outputs/apk/debug/app-debug.apk'
 tests_apk_path '/home/circleci/flyve_mdm/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk'
