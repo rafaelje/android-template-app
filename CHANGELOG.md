@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# 1.5.0 (2018-05-31)
+
+
+### Features
+
+* **about:** add about screen information ([f2c73e9](https://github.com/TECLIB/android-template-app/commit/f2c73e9))
+* **app:** first template code ([adcdcc3](https://github.com/TECLIB/android-template-app/commit/adcdcc3))
+
+
+
 <a name="1.4.0"></a>
 # 1.4.0 (2018-05-31)
 
