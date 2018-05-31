@@ -1,6 +1,6 @@
 {
   "name": "@teclib/android-template-app",
-  "version": "1.27.0",
+  "version": "1.28.0",
   "description": "Application template",
   "main": "index.js",
   "scripts": {
