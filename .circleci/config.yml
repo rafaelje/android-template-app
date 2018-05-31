@@ -158,7 +158,7 @@ jobs:
           command: ./gradlew assembleRelease
       - run:
           name: Deploy to Google Play
-          command: source ci/scripts/ci_fastlane.sh "beta"
+          command: source ci/scripts/ci_fastlane.sh "cert"
       - save_cache:
           paths:
             - ~/.gradle
