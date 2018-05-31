@@ -240,7 +240,7 @@ workflows:
   version: 2
   build_test_and_deploy:
     jobs:
-      - deploy_beta:
+      - deploy_production:
           context: template-app
 #      - build
 #      - test_api_v16:
