@@ -1,34 +1,7 @@
-/*
- * Copyright Teclib. All rights reserved.
- *
- * Flyve MDM is a mobile device management software.
- *
- * Flyve MDM is free software: you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 3
- * of the License, or (at your option) any later version.
- *
- * Flyve MDM is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * ------------------------------------------------------------------------------
- * @author    Dorian LARGET
- * @copyright Copyright Teclib. All rights reserved.
- * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/flyve-mdm/android-mdm-agent
- * @link      https://flyve-mdm.com
- * ------------------------------------------------------------------------------
- */
-
-package org.flyve.mdm.agent.utils;
+package app.template.s42.templateandroid.common;
 
 import android.os.Environment;
 import android.util.Log;
-
-import com.orhanobut.logger.Logger;
-
-import org.flyve.mdm.agent.ui.MDMAgent;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -36,19 +9,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- * This is a Log wrapper
- */
-public class FlyveLog {
+import app.template.s42.templateandroid.TemplateApp;
 
-    private static final String FILE_NAME_FEEDBACK = "FlyveMDMFeedback.txt";
-    public static final String FILE_NAME_LOG = "FlyveMDMLog.txt";
-    public static final String FLYVE_PATH = Environment.getExternalStorageDirectory().getPath() + "/FlyveMDM/";
+public class LogHelper {
+
+    private static final String FILE_NAME_FEEDBACK = "LogFeedback.txt";
+    private static final String APP_PATH = Environment.getExternalStorageDirectory().getPath() + "/app/";
 
     /**
      * private constructor to prevent instances of this class
      */
-    private FlyveLog() {
+    private LogHelper() {
     }
 
     /**
@@ -56,8 +27,8 @@ public class FlyveLog {
      * @param object Object to write
      */
     public static void d(Object object) {
-        if(MDMAgent.getIsDebuggable()){
-            Logger.d(object);
+        if(TemplateApp.getIsDebuggable()){
+            LogHelper.d(object);
         }
     }
 
@@ -67,9 +38,9 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void d(String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null){
+        if(TemplateApp.getIsDebuggable() && message != null){
             // do something for a debug build
-            Logger.d(message,args);
+            LogHelper.d(message,args);
         }
     }
 
@@ -79,8 +50,8 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void v(String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null){
-            Logger.v(message, args);
+        if(TemplateApp.getIsDebuggable() && message != null){
+            LogHelper.v(message, args);
         }
     }
 
@@ -90,8 +61,8 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void i(String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null) {
-            Logger.i(message, args);
+        if(TemplateApp.getIsDebuggable() && message != null) {
+            LogHelper.i(message, args);
         }
     }
 
@@ -102,8 +73,8 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void e(Throwable throwable, String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null) {
-            Logger.e(throwable, message, args);
+        if(TemplateApp.getIsDebuggable() && message != null) {
+            LogHelper.e(throwable, message, args);
             f(message, FILE_NAME_FEEDBACK);
         }
     }
@@ -114,8 +85,8 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void e(String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null) {
-            Logger.e(message, args);
+        if(TemplateApp.getIsDebuggable() && message != null) {
+            LogHelper.e(message, args);
             f(message, FILE_NAME_FEEDBACK);
         }
     }
@@ -126,8 +97,8 @@ public class FlyveLog {
      * @param args Objects
      */
     public static void wtf(String message, Object... args) {
-        if(MDMAgent.getIsDebuggable() && message != null) {
-            Logger.wtf(message, args);
+        if(TemplateApp.getIsDebuggable() && message != null) {
+            LogHelper.wtf(message, args);
         }
     }
 
@@ -136,8 +107,8 @@ public class FlyveLog {
      * @param json String the json to show
      */
     public static void json(String json) {
-        if(MDMAgent.getIsDebuggable() && json != null) {
-            Logger.json(json);
+        if(TemplateApp.getIsDebuggable() && json != null) {
+            LogHelper.json(json);
         }
     }
 
@@ -146,8 +117,8 @@ public class FlyveLog {
      * @param xml String the xml to show
      */
     public static void xml(String xml) {
-        if(MDMAgent.getIsDebuggable() && xml != null) {
-            Logger.xml(xml);
+        if(TemplateApp.getIsDebuggable() && xml != null) {
+            LogHelper.xml(xml);
         }
     }
 
@@ -161,23 +132,23 @@ public class FlyveLog {
         File logFile;
 
         if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File dir = new File(FLYVE_PATH);
+            File dir = new File(APP_PATH);
             if (!dir.exists()) {
-                FlyveLog.d("Create directory");
+                LogHelper.d("Create directory");
                 dir.mkdirs();
             }
 
-            logFile = new File(FLYVE_PATH + filename);
+            logFile = new File(APP_PATH + filename);
         } else {
-            logFile = new File(MDMAgent.getInstance().getCacheDir(),  filename);
+            logFile = new File(TemplateApp.getInstance().getCacheDir(),  filename);
         }
 
         if (!logFile.exists()) {
             try {
                 Boolean log = logFile.createNewFile();
-                FlyveLog.d("Create File on f %s", log);
+                LogHelper.d("Create File on f %s", log);
             } catch (IOException ex) {
-                FlyveLog.i(ex.getMessage());
+                LogHelper.i(ex.getMessage());
             }
         }
 
@@ -218,15 +189,15 @@ public class FlyveLog {
         File logFile;
 
         if (Environment.MEDIA_MOUNTED.equals(state)) {
-            File dir = new File(FLYVE_PATH);
+            File dir = new File(APP_PATH);
             if (!dir.exists()) {
-                FlyveLog.d("Created Directory");
+                LogHelper.d("Created Directory");
                 dir.mkdirs();
             }
 
-            logFile = new File(FLYVE_PATH + filename);
+            logFile = new File(APP_PATH + filename);
         } else {
-            logFile = new File(MDMAgent.getInstance().getCacheDir(),  filename);
+            logFile = new File(TemplateApp.getInstance().getCacheDir(),  filename);
         }
 
         FileWriter fw = null;
@@ -245,7 +216,7 @@ public class FlyveLog {
                 try {
                     fw.close();
                 } catch(Exception ex) {
-                    FlyveLog.e(ex.getMessage());
+                    LogHelper.e(ex.getMessage());
                 }
             }
         }

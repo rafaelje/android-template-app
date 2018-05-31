@@ -1,54 +1,22 @@
-/*
- * Copyright Teclib. All rights reserved.
- *
- * Flyve MDM is a mobile device management software.
- *
- * Flyve MDM is free software: you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 3
- * of the License, or (at your option) any later version.
- *
- * Flyve MDM is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * ------------------------------------------------------------------------------
- * @author    Rafael Hernandez
- * @copyright Copyright Teclib. All rights reserved.
- * @license   GPLv3 https://www.gnu.org/licenses/gpl-3.0.html
- * @link      https://github.com/flyve-mdm/android-mdm-agent
- * @link      https://flyve-mdm.com
- * ------------------------------------------------------------------------------
- */
-
-package org.flyve.mdm.agent.ui;
-
+package app.template.s42.templateandroid;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.pm.ApplicationInfo;
-import android.support.multidex.MultiDex;
 
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
-import org.flyve.mdm.agent.BuildConfig;
-import org.flyve.mdm.agent.utils.UtilsCrash;
+import app.template.s42.templateandroid.common.UtilsCrash;
 
 /**
  * All the application configuration
  */
-public class MDMAgent extends Application {
+public class TemplateApp extends Application {
 
-    private static MDMAgent instance;
+    private static TemplateApp instance;
     private static Boolean isDebuggable;
-
-    protected void attachBaseContext(Context base) {
-        super.attachBaseContext(base);
-        MultiDex.install(this);
-    }
 
     /**
      * Called when the application is starting before any activity, service or receiver objects have been created
@@ -78,7 +46,7 @@ public class MDMAgent extends Application {
      * Get application instance
      * @return MDMAgent object
      */
-    public static MDMAgent getInstance(){
+    public static TemplateApp getInstance(){
         return instance;
     }
 

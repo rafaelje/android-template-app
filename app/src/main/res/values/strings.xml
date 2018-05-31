@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Template Android</string>
+    <string name="about_link">Click here to open about</string>
 </resources>
