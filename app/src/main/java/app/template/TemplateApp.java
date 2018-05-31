@@ -1,4 +1,4 @@
-package app.template.s42.templateandroid;
+package app.template;
 
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
@@ -8,7 +8,8 @@ import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
 import com.orhanobut.logger.PrettyFormatStrategy;
 
-import app.template.s42.templateandroid.common.UtilsCrash;
+import app.template.common.UtilsCrash;
+import app.template.s42.templateandroid.BuildConfig;
 
 /**
  * All the application configuration

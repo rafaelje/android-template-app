@@ -7,7 +7,7 @@ static def releaseTime() {
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "app.template.s42.templateandroid"
+        applicationId "app.template"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1

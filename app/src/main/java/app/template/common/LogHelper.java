@@ -1,4 +1,4 @@
-package app.template.s42.templateandroid.common;
+package app.template.common;
 
 import android.os.Environment;
 import android.util.Log;
@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import app.template.s42.templateandroid.TemplateApp;
+import app.template.TemplateApp;
 
 public class LogHelper {
 

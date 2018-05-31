@@ -1,4 +1,4 @@
-package app.template.s42.templateandroid;
+package app.template;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,8 @@ import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.TextView;
 
-import app.template.s42.templateandroid.common.EnvInfoAbout;
+import app.template.common.EnvInfoAbout;
+import app.template.s42.templateandroid.R;
 
 public class AboutActivity extends AppCompatActivity {
 

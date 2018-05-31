@@ -1,4 +1,4 @@
-package app.template.s42.templateandroid.common;
+package app.template.common;
 
 import android.content.Context;
 
